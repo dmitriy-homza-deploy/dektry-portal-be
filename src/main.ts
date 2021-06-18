@@ -5,6 +5,8 @@ import { NestExpressApplication } from '@nestjs/platform-express';
 import * as cookieParser from 'cookie-parser';
 import dotEnv = require('dotenv');
 
+const PORT = process.env.API_PORT || 3000;
+
 async function bootstrap() {
   await dotEnv.config();
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -14,6 +16,6 @@ async function bootstrap() {
     origin: process.env.API_URL,
     credentials: true,
   });
-  await app.listen(process.env.API_PORT || 3000);
+  await app.listen(PORT);
 }
 bootstrap();
