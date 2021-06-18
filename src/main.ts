@@ -12,10 +12,10 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
-  app.enableCors({
-    origin: process.env.API_URL,
-    credentials: true,
-  });
+  // app.enableCors({
+  //   origin: process.env.API_URL,
+  //   credentials: true,
+  // });
   await app.listen(PORT, () => {
     console.log(`Our app is running on port ${PORT}`);
   });
