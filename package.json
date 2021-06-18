@@ -1,6 +1,9 @@
 {
   "name": "backend-boilerplate",
   "version": "0.0.1",
+  "engines": {
+    "yarn": "1.22.10"
+  },
   "description": "Vlad Leo backend boilerplate",
   "author": "Vlad-Leo",
   "private": true,
