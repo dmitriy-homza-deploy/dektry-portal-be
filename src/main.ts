@@ -16,6 +16,8 @@ async function bootstrap() {
     origin: process.env.API_URL,
     credentials: true,
   });
-  await app.listen(PORT);
+  await app.listen(PORT, () => {
+    console.log(`Our app is running on port ${PORT}`);
+  });
 }
 bootstrap();
